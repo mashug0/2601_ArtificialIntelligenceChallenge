@@ -1,7 +1,5 @@
 # The Dragon Hatchling — BDH Neural Interpretability Suite
 
-> An interactive, full-stack visualization platform for exploring the internals of a BDH — Brain-like Dragon Hatchling. Built to make neural network interpretability intuitive, visual, and live.
-
 ---
 
 ## Hosted Demo & Video
