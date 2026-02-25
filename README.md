@@ -1,19 +1,19 @@
-# 🐉 The Dragon Hatchling — BDH Neural Interpretability Suite
+# The Dragon Hatchling — BDH Neural Interpretability Suite
 
 > An interactive, full-stack visualization platform for exploring the internals of a BDH — Brain-like Dragon Hatchling. Built to make neural network interpretability intuitive, visual, and live.
 
 ---
 
-## 🌐 Hosted Demo & Video
+## Hosted Demo & Video
 
 | | Link |
 |---|---|
-| 🔗 **Live Demo** | [https://matriarchic-ungladly-myrta.ngrok-free.dev/] |
-| 🎥 **Demo Video** | [your-video-link-here] |
+| **Live Demo** | [https://matriarchic-ungladly-myrta.ngrok-free.dev/] |
+| **Demo Video** | [your-video-link-here] |
 
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 
 <!-- Replace the placeholders below with your actual screenshots -->
 
@@ -27,13 +27,13 @@
 
 ---
 
-## 🧠 What We Built
+## What We Built
 
-The Dragon Hatchling (BDH) is a custom **k-Winner-Take-All sparse transformer** trained from scratch, paired with a full-stack interpretability dashboard. The model enforces biological-style sparsity at every layer — only the top-k neurons fire per forward pass — making it uniquely interpretable. The visualization suite lets you feed any text input and watch in real-time how neurons activate, how concepts are stored, how Hebbian synapses strengthen, and how ROPE positional encoding works. It also includes a live training Studio where you can train specialist models, merge them, and run inference — all from the browser.
+The Baby Dragon Hatchling (BDH) is a biologically plausible post-Transformer architecture grounded in reaction-diffusion graph dynamics, local Hebbian plasticity, and **k-Winners-Take-All (k-WTA) lateral inhibition** — trained from scratch on the Tiny Shakespeare corpus. Unlike standard Transformers that rely on dense O(N²) global self-attention and static synaptic weights, the BDH architecture enforces strict metabolic sparsity: only the top-k neurons (≈15% early training, crystallising to ~3% by epoch 40) fire per forward pass, producing **intrinsically monosemantic** representations where individual neurons align bijectively with single semantic concepts without post-hoc probing or sparse autoencoders. The architecture was validated across Vision (CIFAR-10/100), Audio (Speech Commands, ESC-50), and Language (WikiText-103, Tiny Shakespeare) domains, empirically confirming four core claims: *(1)* Intrinsic Monosemanticity — k-WTA eliminates vector superposition, isolating specialist neurons for concepts like "Royalty" (neurons #6150, #6525) vs. "Vehicles" (neurons 200–300) with <1% cross-talk; *(2)* Dynamic Topology — Hebbian "Semantic Welding" physically rewires synaptic connections (e.g., "Soldier" ↔ "Army") during inference via Oja's Rule, shifting from static retrieval to active internalization; *(3)* Metabolic Efficiency — a Synaptic Pruning trajectory reduces active parameters from 17.98% to ~3% over training, achieving a ~30× reduction in FLOPs versus dense Transformers; *(4)* Composable Intelligence — block-diagonal submodular graph topology enables non-destructive concatenation of specialist models (Specialist A ∪ Specialist B = Generalist) via set-union operations, solving catastrophic forgetting without regularization. The full-stack visualization suite — built in SvelteKit with a FastAPI backend — surfaces all of this as live interactive dashboards: a 3D force-graph of neuron activations, monosemanticity probes, Hebbian synapse animations, a Memory Lobe hierarchy, ROPE geometry, ReLU low-rank structure, a VS Battle arena against a dense baseline Transformer, and a **No-Code BDH Workbench** (Studio) where users can train specialist models, watch synaptogenesis unfold in real-time via Server-Sent Events, and merge topologies — all from the browser without writing any code.
 
 ---
 
-## 💡 What Insight It Reveals About BDH
+## What Insight It Reveals About BDH
 
 - **Monosemanticity:** Individual neurons in BDH reliably activate for specific semantic concepts (e.g. "military", "nature") rather than polysemantic superpositions — a direct consequence of k-WTA sparsity.
 - **Sparse Activation Atlas:** At any forward pass, only ~15% of neurons fire, forming clean, interpretable activation clusters.
@@ -44,7 +44,7 @@ The Dragon Hatchling (BDH) is a custom **k-Winner-Take-All sparse transformer** 
 
 ---
 
-## 🗺️ Pages
+## Pages
 
 | Route | Page | Description |
 |-------|------|-------------|
@@ -61,7 +61,7 @@ The Dragon Hatchling (BDH) is a custom **k-Winner-Take-All sparse transformer** 
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 The_Dragon_Hatchling/
@@ -102,7 +102,7 @@ The_Dragon_Hatchling/
 
 ---
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 ### Prerequisites
 
@@ -182,7 +182,7 @@ Open **http://localhost:8000** — all pages served from one URL.
 
 ---
 
-## 🌍 Public Access via ngrok
+## Public Access via ngrok
 
 To share with others without a server:
 
@@ -200,7 +200,7 @@ Your app is now live at your ngrok URL.
 
 ---
 
-## 👥 Team Members & Contributions
+## Team Members & Contributions
 
 | Member | Contribution |
 |--------|-------------|
@@ -215,18 +215,43 @@ Your app is now live at your ngrok URL.
 
 ---
 
-## ⚠️ Limitations & Future Scope
+## Limitations & Future Scope
 
-### Current Limitations
-- The model is small (4-layer, 256-dim) — trained for interpretability demos, not SOTA performance
-- The Learn page (`/learn`) runs as a separate Vite app and requires `npm run dev` or separate proxying in production
-- Studio training runs on CPU by default; large jobs may be slow without a GPU
-- Free ngrok URLs change on restart (use `--domain=` flag to pin the static domain)
+### Theoretical & Mathematical Gaps
+- **No formal convergence proofs:** The Synaptic State Equation (ρ = ρ·U + w·kᵀ) lacks rigorous derivations — no stability regions, PAC-style generalisation bounds, or closed-form proofs that global attention is exactly recoverable from local Hebbian updates.
+- **Mean-field approximation error:** The equivalence between the theoretical "Wire Mode" (explicit graph) and the practical "BDH-GPU" (tensor mode) relies on a uniform-connectivity mean-field reduction that may erase locality-dependent effects such as multi-hop recursion and edge-dependent reasoning.
+- **Undefined thermodynamic limits:** The paper alludes to a limit object 𝒫_d as d → ∞, but the measure space, ergodicity assumptions, and mixing conditions for this limit remain undefined.
+
+### Architectural Constraints
+- **Linear attention expressivity gap:** Linear attention kernels have lower expressivity than Softmax attention, particularly for "needle-in-a-haystack" retrieval and tasks requiring strict negation or nested dependencies. Formal bounds relative to RASP/C-RASP are absent.
+- **Positive-only restriction:** ReLU enforces activations into the positive orthant, preventing negative interference for orthogonalisation. No mechanism for true negative edge weights or antagonistic modelling is provided — it is unclear how the model handles negation ("NOT a car") without signed activations.
+- **Parameter-to-state ratio:** The 1:1 ratio between trainable parameters and state size is asserted as architecturally significant but is not justified by theory or ablation studies.
+
+### Experimental Blind Spots
+- **No long-context benchmarks:** Despite motivating the architecture with O(1) memory via recurrent state, no controlled experiments measure retention at 4× or 10× the training context length, nor CoT benchmarks where spurious state accumulation may occur.
+- **No efficiency comparison against optimised baselines:** Wall-clock throughput, VRAM footprint, and energy consumption have not been benchmarked against FlashAttention-2 or Mamba (SSMs) at the 1B–10B parameter scale.
+- **No robustness evaluation:** The model has not been tested under distribution shift, multilingual variance, adversarial prompts, or noisy input where fast-weight updates may accumulate unstable state.
+
+### Stability & Biological Validity
+- **Fast-weight stability:** Hebbian inference updates lack analysis of stability as context length T → ∞ — no mechanism prevents runaway positive feedback loops or spurious association accumulation in the absence of negative inhibition.
+- **Biological isomorphism is metaphorical:** The mapping to cortical circuits (excitatory/inhibitory, integrate-and-fire, STDP timescales) is conceptual. Oscillatory phenomena critical for biological timing and gating are entirely absent from the formulation.
+
+### Safety & Reproducibility
+- **Unsubstantiated safety claims:** "Axiomatic AI" safety is a philosophical assertion without formal guarantees. The interpretable state does not automatically imply safe behaviour — adversarial autonomy stress tests are required.
+- **Privacy of synaptic state:** Because the model updates synaptic weights during inference, sensitive in-context user data may be memorised more stubbornly than in standard KV-caches. Probing-attack privacy analysis is needed.
+- **Reproducibility gaps:** Training corpora details, preprocessing pipelines, tokenisation filters, and contamination controls are not fully documented, preventing independent verification of scaling law parity claims.
+
+### Practical / Deployment Limitations
+- The current model is small (4-layer, 256-dim) — trained for interpretability demos, not SOTA benchmark performance.
+- Studio training runs on CPU by default; large training jobs are slow without a GPU.
+- The Learn page (`/learn`) runs as a separate Vite app and requires additional proxying in production.
+- Free ngrok URLs change on restart — use `--domain=` to pin the static domain.
 
 ### Future Scope
-- Train a larger BDH variant and compare interpretability at scale
-- Add real-time collaborative visualization (multiple users exploring the same model simultaneously)
-- Integrate mechanistic interpretability techniques (activation patching, causal tracing)
-- Deploy on a persistent VPS for always-on access
-- Export neuron concept dictionaries as downloadable datasets
-- Extend VS Battle to compare against GPT-2 and other open models
+- Provide formal convergence proofs and PAC generalisation bounds for the Synaptic State Equation.
+- Benchmark BDH against FlashAttention-2 and Mamba at the 1B parameter scale for wall-clock efficiency validation.
+- Implement activation patching / causal mediation analysis for full counterfactual interpretability ("What if neuron i had not fired?").
+- Conduct long-context retention benchmarks at 4×–10× training context.
+- Extend the No-Code Studio to support language model training (not just vision) with full Topology Engineering UI.
+- Publish neuron concept dictionaries as open datasets for independent monosemanticity research.
+- Deploy on a persistent VPS for always-on public access.
