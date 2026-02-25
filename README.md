@@ -8,8 +8,8 @@
 
 | | Link |
 |---|---|
-| 🔗 **Live Demo** | [your-ngrok-or-hosted-url-here](#) |
-| 🎥 **Demo Video** | [your-video-link-here](#) |
+| 🔗 **Live Demo** | [https://matriarchic-ungladly-myrta.ngrok-free.dev/] |
+| 🎥 **Demo Video** | [your-video-link-here] |
 
 ---
 
@@ -204,14 +204,14 @@ Your app is now live at your ngrok URL.
 
 | Member | Contribution |
 |--------|-------------|
-| **takshay Bansal** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
-| **Saksham Gupta** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
-| **Parate Aditya Nitin** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
-| **Kunchit Pujari** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
-| **Pourush ** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
-| **Saksham Gupta** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
-| **Saksham Gupta** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
-| **Saksham Gupta** | Model architecture (BDH k-WTA), training pipeline, backend API, Studio page |
+| **Takshay Bansal** | Leading the ideation and strategy for project |
+| **Saksham Gupta** | Developed BDH vs Transformer and No Code Studio |
+| **Parate Aditya Nitin** | Proved and developed tech stack for Monosemanticity |
+| **Kunchit Pujari** | Proved and developed tech stack for RoPE and ReLU functions |
+| **Pourush Jalan** | Developed Frontend and training, inference & files |
+| **Raghav K** | Developed Frontend and training, inference & files |
+| **Dakshin Gautham** | Proved and developed tech stack for Hebbian learning & 3D brain topology |
+| **Atharv Madan** | Developed learning course curriculum and Page architecture |
 
 ---
 
