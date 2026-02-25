@@ -1,0 +1,222 @@
+.page {
+  min-height: 100%;
+  padding: 0 0 80px;
+}
+
+.content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 48px;
+}
+
+.notFound {
+  padding: 80px 48px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+.notFound a { color: var(--accent); }
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 13px;
+}
+
+.breadcrumbLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.15s;
+}
+.breadcrumbLink:hover { color: var(--accent); }
+
+.breadcrumbSep { color: var(--text-muted); }
+
+.breadcrumbCurrent {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Lesson header */
+.lessonHeader {
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.lessonMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.metaItemDone {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--green);
+}
+
+.lessonTitle {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  font-family: var(--font-display);
+  line-height: 1.15;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sections */
+.sections {
+  margin-bottom: 8px;
+}
+
+/* Exercise block */
+.exerciseBlock { margin-top: 8px; }
+
+.exerciseDivider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.exerciseDivider::before, .exerciseDivider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.exerciseDividerLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
+/* Complete button */
+.completeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 10px;
+  margin-top: 32px;
+  transition: all 0.2s;
+}
+.completeBtn:hover:not(:disabled) {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-dim);
+  transform: translateY(-1px);
+}
+.completeBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.completeHint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.completedNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 32px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  min-width: 200px;
+  max-width: 280px;
+}
+.pageBtn:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.pageBtnNext { margin-left: auto; text-align: right; justify-content: flex-end; }
+
+.pageBtnLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.pageBtnTitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .content { padding: 24px 20px; }
+  .lessonTitle { font-size: 24px; }
+  .pagination { flex-direction: column; }
+  .pageBtn { min-width: 0; max-width: none; }
+  .pageBtnNext { margin-left: 0; justify-content: flex-start; text-align: left; }
+}

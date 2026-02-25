@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Build and cache (regenerated on npm run build / dev)
+.svelte-kit/
+.vite/
+build/
+dist/
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Generated data (run: python backend/export_all.py)
+static/data/activations.json
+static/data/battle_data.json
+static/data/comparison_data.json
+static/data/explainer.json
+
+# IDE, AI, and OS
+.idea/
+.vscode/
+.claude/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+._*
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and temp
+*.log
+*.tmp
+.cache/

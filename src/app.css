@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Deep glow theme tokens */
+@layer base {
+	:root {
+		--background: 240 33% 5%;
+		--foreground: 210 40% 95%;
+
+		--card: 240 30% 10%;
+		--card-foreground: 210 40% 95%;
+
+		--popover: 240 30% 10%;
+		--popover-foreground: 210 40% 95%;
+
+		--primary: 186 100% 50%;
+		--primary-foreground: 240 33% 5%;
+
+		--secondary: 240 20% 16%;
+		--secondary-foreground: 210 40% 95%;
+
+		--muted: 240 20% 16%;
+		--muted-foreground: 215 20% 55%;
+
+		--accent: 324 100% 53%;
+		--accent-foreground: 210 40% 95%;
+
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 240 20% 18%;
+		--input: 240 20% 18%;
+		--ring: 186 100% 50%;
+
+		--radius: 0.75rem;
+
+		--neon-cyan: 186 100% 50%;
+		--neon-magenta: 324 100% 53%;
+		--neon-amber: 40 100% 50%;
+		--neon-emerald: 150 100% 50%;
+
+		--surface: 240 30% 10%;
+		--surface-hover: 240 25% 14%;
+
+		--sidebar-background: 240 33% 5%;
+		--sidebar-foreground: 210 40% 95%;
+		--sidebar-primary: 186 100% 50%;
+		--sidebar-primary-foreground: 240 33% 5%;
+		--sidebar-accent: 240 20% 16%;
+		--sidebar-accent-foreground: 210 40% 95%;
+		--sidebar-border: 240 20% 18%;
+		--sidebar-ring: 186 100% 50%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground font-sans;
+		font-family: 'Space Grotesk', sans-serif;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'DM Sans', sans-serif;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+	}
+
+	code,
+	.font-mono {
+		font-family: 'JetBrains Mono', monospace;
+	}
+}
+
+@layer utilities {
+	/* Deep glow cards and glows — transparent glassmorphism */
+	.glass-card {
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		@apply border border-border/50 rounded-lg;
+	}
+
+	.glow-cyan {
+		box-shadow: 0 0 20px hsl(186 100% 50% / 0.15), 0 0 40px hsl(186 100% 50% / 0.05);
+	}
+
+	.glow-magenta {
+		box-shadow: 0 0 20px hsl(324 100% 53% / 0.15), 0 0 40px hsl(324 100% 53% / 0.05);
+	}
+
+	.glow-amber {
+		box-shadow: 0 0 20px hsl(40 100% 50% / 0.15), 0 0 40px hsl(40 100% 50% / 0.05);
+	}
+
+	.glow-emerald {
+		box-shadow: 0 0 20px hsl(150 100% 50% / 0.15), 0 0 40px hsl(150 100% 50% / 0.05);
+	}
+
+	.text-glow-cyan {
+		text-shadow: 0 0 10px hsl(186 100% 50% / 0.5);
+	}
+
+	.text-glow-magenta {
+		text-shadow: 0 0 10px hsl(324 100% 53% / 0.5);
+	}
+
+	.neon-border-cyan {
+		border-color: hsl(186 100% 50% / 0.3);
+	}
+
+	.neon-border-magenta {
+		border-color: hsl(324 100% 53% / 0.3);
+	}
+
+	/* Custom scrollbar tuned for dark theme */
+	.scrollbar-thin {
+		scrollbar-width: thin;
+		scrollbar-color: hsl(215 20% 35%) transparent;
+	}
+
+	.scrollbar-thin::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+
+	.scrollbar-thin::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.scrollbar-thin::-webkit-scrollbar-thumb {
+		background-color: hsl(215 20% 35%);
+		border-radius: 3px;
+	}
+
+	.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+		background-color: hsl(215 20% 55%);
+	}
+}
+
+/* 3D Graph container - dark glassy panel */
+.graph-container {
+	width: 100%;
+	height: 100%;
+	background:
+		radial-gradient(circle at top, hsl(186 100% 50% / 0.08), transparent),
+		radial-gradient(circle at bottom, hsl(324 100% 53% / 0.08), transparent),
+		linear-gradient(180deg, hsl(240 30% 10%) 0%, hsl(240 30% 6%) 100%);
+	border-radius: 0.75rem;
+	overflow: hidden;
+	border: 1px solid hsl(var(--border));
+}
+
+.graph-container canvas {
+	display: block;
+}
+
+/* Panel styles, now using deep-glow surface tokens */
+.panel {
+	@apply glass-card;
+}
+
+.panel-header {
+	@apply px-4 py-3 border-b border-border font-semibold text-sm tracking-wide text-muted-foreground;
+}
+
+.panel-body {
+	@apply p-4;
+}
+
+/* Token chip styles */
+.token-chip {
+	@apply px-2 py-1 rounded text-xs font-mono transition-all duration-200;
+	@apply bg-secondary/60 text-muted-foreground hover:bg-secondary hover:text-foreground;
+}
+
+.token-chip.active {
+	@apply bg-excitatory text-white shadow-md;
+}
+
+.token-chip.specialist {
+	@apply ring-2 ring-specialist ring-offset-1 ring-offset-background;
+}
+
+/* Neuron glow effect for specialists */
+.neuron-specialist {
+	filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.8));
+}
+
+/* Legend color swatches */
+.color-swatch {
+	@apply w-4 h-4 rounded-sm;
+}
+
+/* Layer toggle */
+.layer-toggle {
+	@apply flex items-center gap-2 px-3 py-2 rounded-md transition-colors;
+	@apply hover:bg-surface-hover/70;
+}
+
+.layer-toggle.collapsed {
+	@apply opacity-50;
+}
+
+/* Animation classes */
+.fade-enter {
+	animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Loading spinner */
+.spinner {
+	@apply w-6 h-6 border-2 border-border rounded-full;
+	border-top-color: hsl(var(--primary));
+	animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.panel {
+		@apply rounded-none border-x-0;
+	}
+}
