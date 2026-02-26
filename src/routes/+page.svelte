@@ -22,7 +22,7 @@
 	let isRightMinimized = false;
 	let isBottomMinimized = false;
 
-	const API_URL = 'http://localhost:8000';
+	const API_URL = '';
 
 	// Load pre-computed activation data
 	async function loadData() {

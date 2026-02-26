@@ -407,9 +407,14 @@ def _run_training(job: JobState, dataset_key: str, spec: SpecialistSpec, num_cla
         train_cfg = spec.train
         target_classes = spec.target_classes
         num_classes = len(target_classes)
+
+        if num_classes < 2:
+            _push_error(job, f"[{spec.name}] Error: need at least 2 classes to train a classifier, got {num_classes} ({target_classes}). Assign 2+ classes to this specialist before running.")
+            return
+
         label_map = {old: new for new, old in enumerate(target_classes)}
 
-        _push(job, f"[{spec.name}] Starting on {device} | classes: {target_classes}")
+        _push(job, f"[{spec.name}] Starting on {device} | classes: {target_classes} ({num_classes} classes)")
         # Reset progress curves so Live Stats shows only this specialist
         job.train_losses = []
         job.val_accs = []

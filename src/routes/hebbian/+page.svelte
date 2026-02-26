@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 
-	const API_URL = 'http://localhost:8000';
+	const API_URL = '';
 
 	interface Frame {
 		step: number;

@@ -5,7 +5,7 @@
 	export let vocabulary: Vocabulary;
 	export let maxLength: number = 128;
 	export let isLoading: boolean = false;
-	export let apiUrl: string = 'http://localhost:8000';
+	export let apiUrl: string = '';
 
 	const dispatch = createEventDispatcher<{
 		submit: { activationData: ActivationData };
