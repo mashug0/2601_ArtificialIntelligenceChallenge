@@ -6,7 +6,7 @@
 
 | | Link |
 |---|---|
-| **Live Demo** | [https://matriarchic-ungladly-myrta.ngrok-free.dev/] |
+| **Live Demo** | https://saksham-gupta-684--bdh-bdh-fastapi-app.modal.run |
 | **Demo Video** | [your-video-link-here] |
 
 ---
@@ -180,21 +180,41 @@ Open **http://localhost:8000** — all pages served from one URL.
 
 ---
 
-## Public Access via ngrok
+## Cloud Deployment via Modal
 
-To share with others without a server:
+The app is deployed on [Modal](https://modal.com) 
+### One-time setup
 
 ```bash
-# Install ngrok: https://ngrok.com/download
-ngrok config add-authtoken YOUR_TOKEN
-
-# Build first, then run backend, then tunnel
-npm run build
-cd backend && python main.py   # Terminal 1
-ngrok http --domain=your-static-domain.ngrok-free.app 8000   # Terminal 2
+pip install modal
+modal setup        # authenticate with your Modal account
 ```
 
-Your app is now live at your ngrok URL.
+### Deploy
+
+```bash
+# Build the frontend first
+npm run build
+
+# Deploy to Modal (laptop can be closed after this)
+modal deploy modal_app.py
+```
+
+The app will be live at your Modal URL (shown after deploy). The deployment:
+- Runs on an **NVIDIA T4 GPU** for fast inference and Studio training
+- Keeps **1 warm container** (`min_containers=1`) so the demo loads instantly
+- Capped at **1 container** (`max_containers=1`) so Studio training state is never split across instances
+- Persists Studio checkpoints and datasets in Modal Volumes across redeployments
+
+### Test locally before deploying
+
+```bash
+modal serve modal_app.py
+```
+
+### Cost
+
+With `min_containers=1` on a T4, the app costs ~$0.59/hr even when idle. Set `min_containers=0` in `modal_app.py` and redeploy when not actively demoing to stop idle charges — cold start will be ~10s.
 
 ---
 
@@ -243,7 +263,7 @@ Your app is now live at your ngrok URL.
 - The current model is small (4-layer, 256-dim) — trained for interpretability demos, not SOTA benchmark performance.
 - Studio training runs on CPU by default; large training jobs are slow without a GPU.
 - The Learn page (`/learn`) runs as a separate Vite app and requires additional proxying in production.
-- Free ngrok URLs change on restart — use `--domain=` to pin the static domain.
+- Modal cold starts take ~10s when `min_containers=0`; set to 1 for instant loads during demos.
 
 ### Future Scope
 - Provide formal convergence proofs and PAC generalisation bounds for the Synaptic State Equation.
