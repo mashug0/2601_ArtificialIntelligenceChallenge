@@ -7,7 +7,7 @@
 | | Link |
 |---|---|
 | **Live Demo** | https://saksham-gupta-684--bdh-bdh-fastapi-app.modal.run |
-| **Demo Video** | [your-video-link-here] |
+| **Demo Video** | https://www.youtube.com/watch?v=n2ZZHnCNar8 |
 
 ---
 
@@ -226,8 +226,8 @@ With `min_containers=1` on a T4, the app costs ~$0.59/hr even when idle. Set `mi
 | **Saksham Gupta** | Developed BDH vs Transformer and No Code Studio |
 | **Parate Aditya Nitin** | Proved and developed tech stack for Monosemanticity |
 | **Kunchit Pujari** | Proved and developed tech stack for RoPE and ReLU functions |
-| **Pourush Jalan** | Developed Frontend and training, inference & files |
-| **Raghav K** | Developed Frontend and training, inference & files |
+| **Pourush Jalan** | Developed Frontend and training, inference files |
+| **Raghav K** | Developed Frontend and training, inference files |
 | **Dakshin Gautham** | Proved and developed tech stack for Hebbian learning & 3D brain topology |
 | **Atharv Madan** | Developed learning course curriculum and Page architecture |
 
